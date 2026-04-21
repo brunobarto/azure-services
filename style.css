@@ -22,14 +22,14 @@ body {
   background: linear-gradient(135deg, #4c6faf, #1f2b3f);
 }
 
-
 /* Window */
 
 .window {
-  margin: 24px auto;
+  margin: 10px auto;
   width: 1100px;
   max-width: calc(100% - 40px);
-  height: calc(100vh - 80px);
+  height: calc(100vh - 20px);
+  min-height: 500px;
   background: #e5e5e5;
   border-radius: 6px;
   box-shadow: 0 0 0 1px #777, 0 12px 30px rgba(0, 0, 0, 0.45);
@@ -209,6 +209,7 @@ body {
   display: grid;
   grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: 8px;
+  overflow-y: auto; /* FIX SCROLL */
 }
 
 /* Cards view */
@@ -217,7 +218,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 8px;
-  overflow-y: auto;
+  overflow-y: auto; /* FIX SCROLL */
   padding-right: 4px;
 }
 
@@ -269,7 +270,9 @@ body {
   background: #f5f5f5;
   border-radius: 4px;
   border: 1px solid #b0b0b0;
-  overflow: hidden;
+  overflow-y: auto; /* FIX SCROLL */
+  display: block;
+  max-height: 100%;
 }
 
 .list-view th,
@@ -340,17 +343,21 @@ body {
   display: none;
 }
 
-/* Scrollbars (subtle) */
+/* Scrollbars */
 
 .cards-view::-webkit-scrollbar,
 .category-list::-webkit-scrollbar,
-.details-panel::-webkit-scrollbar {
+.details-panel::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.list-view::-webkit-scrollbar {
   width: 6px;
 }
 
 .cards-view::-webkit-scrollbar-thumb,
 .category-list::-webkit-scrollbar-thumb,
-.details-panel::-webkit-scrollbar-thumb {
+.details-panel::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb,
+.list-view::-webkit-scrollbar-thumb {
   background: #b0b0b0;
   border-radius: 3px;
 }
