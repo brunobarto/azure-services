@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Azure Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+    <div class="window">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <span class="light red"></span>
+          <span class="light yellow"></span>
+          <span class="light green"></span>
+        </div>
+        <div class="window-title"> Azure Services </div>
+      </div>
+
+      <div class="window-toolbar">
+        <div class="toolbar-left">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search services…"
+          />
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+          </select>
+        </div>
+        <div class="toolbar-right">
+          <span class="pill active" data-view="cards">Cards</span>
+          <span class="pill" data-view="list">List</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-title">Service groups</div>
+            <ul id="categoryList" class="category-list">
+              <!-- Filled by JS -->
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-title">Selected</div>
+            <div id="selectedServiceName" class="selected-name">
+              None
+            </div>
+            <div id="selectedServiceCategory" class="selected-meta">
+              —
+            </div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <div id="cardsView" class="cards-view"></div>
+          <table id="listView" class="list-view hidden">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Category</th>
+                <th>Short description</th>
+              </tr>
+            </thead>
+            <tbody id="listBody"></tbody>
+          </table>
+
+          <section id="detailsPanel" class="details-panel">
+            <h2 id="detailsName">Azure Cloud</h2>
+            <div class="details-meta">
+              <span id="detailsCategory" class="badge">Platform</span>
+            </div>
+            <p id="detailsDescription">
+              Microsoft’s cloud computing platform, offering services for
+              computing, analytics, storage, and networking.
+            </p>
+            <div class="details-tags" id="detailsTags"></div>
+          </section>
+        </main>
+      </div>
+
+      <div class="window-statusbar">
+        <span id="statusText">Ready.</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
